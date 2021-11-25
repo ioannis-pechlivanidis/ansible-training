@@ -1,0 +1,12 @@
+# check remote servers connectivity
+ansible all --key-file ~/.ssh/ansible -i inventory -m ping -u ansible
+
+# check remote servers connectivity using ansible.cfg override file
+ansible all -m ping
+
+# list hosts
+ansible all --list-hosts
+
+# get inofrmation for all remote servers or just a speficic one
+ansible all -m gather_facts
+ansible all -m gather_facts --limit 192.168.1.5
